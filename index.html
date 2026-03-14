@@ -873,65 +873,7 @@
             observer.observe(el);
         });
 
-        // Random Popping Hearts Animation
-        function createPopHeart() {
-            const container = document.getElementById('hearts-container');
-            if (!container) return;
 
-            const heart = document.createElement('div');
-            heart.className = 'heart-pop';
-            
-            // Vary the heart emoji
-            const hearts = ['💕', '💗', '💓', '💞', '❤️'];
-            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
-
-            // Random position within viewport
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-
-            // Random size (1-4) - larger range for more variety
-            const size = Math.random() * 3 + 1;
-            const duration = Math.random() * 1.5 + 2.5; // 2.5 - 4 seconds for slow motion
-
-            // Random travel distance - more varied movement
-            const tx = (Math.random() - 0.5) * 300;
-            const ty = (Math.random() - 0.5) * 300 - 150;
-
-            heart.style.left = x + 'px';
-            heart.style.top = y + 'px';
-            heart.style.setProperty('--size', size + 'em');
-            heart.style.setProperty('--duration', duration + 's');
-            heart.style.setProperty('--tx', tx + 'px');
-            heart.style.setProperty('--ty', ty + 'px');
-
-            container.appendChild(heart);
-
-            // Remove heart after animation completes
-            setTimeout(() => {
-                heart.remove();
-            }, duration * 1000);
-        }
-
-        // Generate hearts every 600ms while scrolling through hero section
-        let heartInterval;
-        const heroSection = document.querySelector('section');
-
-        window.addEventListener('scroll', () => {
-            const heroRect = heroSection.getBoundingClientRect();
-            const isHeroInView = heroRect.top < window.innerHeight && heroRect.bottom > 0;
-
-            if (isHeroInView && !heartInterval) {
-                heartInterval = setInterval(createPopHeart, 600);
-            } else if (!isHeroInView && heartInterval) {
-                clearInterval(heartInterval);
-                heartInterval = null;
-            }
-        });
-
-        // Trigger initial hearts when page loads if hero is visible
-        if (heroSection.getBoundingClientRect().bottom > 0) {
-            heartInterval = setInterval(createPopHeart, 600);
-        }
     </script>
 
 </body>
