@@ -183,59 +183,61 @@
     <!-- Spacer for fixed header -->
     <div class="h-20 md:h-20"></div>
 
-    <style>
-      .hero-bg{
-        background-image: url('./images/home-bg2.webp');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed; /* Optional: Creates a parallax scroll effect */
-    height: 100vh; /* Ensures the container covers the full viewport height */
-    margin: 0; /* Removes default body margin */
-    padding: 0;
-
-      }
-
-    </style>
-
     <!-- Hero Section -->
-    <section  class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-20 md:py-32 pt-24 md:pt-32">
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-20 md:py-32 pt-24 md:pt-32">
+        <!-- Background Image Layer -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><defs><linearGradient id=%22grad%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 style=%22stop-color:%23ec4899;stop-opacity:0.4%22/><stop offset=%22100%25%22 style=%22stop-color:%23a855f7;stop-opacity:0.4%22/></linearGradient></defs><circle cx=%22300%22 cy=%22200%22 r=%22150%22 fill=%22url(%23grad)%22 opacity=%220.6%22/><circle cx=%22900%22 cy=%22400%22 r=%22180%22 fill=%22url(%23grad)%22 opacity=%220.5%22/><path d=%22M 200 300 Q 400 200 600 300 T 1000 300%22 stroke=%22%23ec4899%22 stroke-width=%222%22 fill=%22none%22 opacity=%220.3%22/></svg>');"></div>
+        
+        <!-- Glowing Orbs -->
+        <div class="hero-glow absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-rose-400 to-pink-300 rounded-full blur-3xl opacity-20"></div>
+        <div class="hero-glow absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-400 to-pink-300 rounded-full blur-3xl opacity-15"></div>
+        
+        <!-- Sparkles -->
+        <div class="sparkle absolute top-1/3 left-1/3" style="animation-delay: 0s;"></div>
+        <div class="sparkle absolute top-1/4 right-1/3" style="animation-delay: 0.5s;"></div>
+        <div class="sparkle absolute bottom-1/3 right-1/4" style="animation-delay: 1s;"></div>
+        <div class="sparkle absolute bottom-1/4 left-1/2" style="animation-delay: 1.5s;"></div>
+        <div class="sparkle absolute top-1/2 left-1/4" style="animation-delay: 0.7s;"></div>
+        
         <!-- Main Gradient Overlay -->
         <div class="absolute inset-0 bg-gradient-to-r from-rose-500/5 to-purple-500/5"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40"></div>
-        <div class="relative py-20 sm:py-32 overflow-hidden bg-cover bg-center bg-no-repeat" 
-        >
-    
-    <div class="container mx-auto text-center relative z-10 max-w-5xl px-4">
-        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold serif mb-4 sm:mb-6 bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent leading-tight">
-            Dream Soulmates <span class="block">for NRIs</span>
-        </h1>
-
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-2">
-            <a href="#register" class="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-semibold text-base sm:text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:from-rose-600 hover:to-pink-700">
-                <i class="fas fa-heart text-lg sm:text-xl mr-2 sm:mr-3 group-hover:scale-110 transition-transform"></i>
-                Find NRI Matches Now
-            </a>
-        </div>
-
-        <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm md:text-base font-medium text-gray-800">
-            <div class="flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
-                <i class="fas fa-users text-rose-500 text-lg sm:text-xl"></i>
-                <span>50K+ NRIs</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
-                <i class="fas fa-chart-line text-green-500 text-lg sm:text-xl"></i>
-                <span>Verified Profiles</span>
-            </div>
-            <div class="flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
-                <i class="fas fa-shield-alt text-blue-500 text-lg sm:text-xl"></i>
-                <span>Residents Permits & Passport</span>
-            </div>
-        </div>
-    </div>
-</div>
-
         
+        <div class="container mx-auto text-center relative z-10 max-w-5xl px-4">
+            <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold serif mb-4 sm:mb-6 bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent leading-tight">
+                Dream Soulmates <span class="block">for NRIs</span>
+            </h1>
+            <!-- <p class="text-base sm:text-xl md:text-2xl text-gray-700 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2">
+                #1 NRI Matrimony <br> 100% Verified Profiles (Passport, Residents Permits), 
+                <br> Kundali Matching & Lifelong Success Prediction. 
+                <br> America • EMEA • APAC
+            </p> -->
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-2">
+                <a href="#register" class="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-semibold text-base sm:text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:from-rose-600 hover:to-pink-700">
+                    <i class="fas fa-heart text-lg sm:text-xl mr-2 sm:mr-3 group-hover:scale-110 transition-transform"></i>
+                    Find NRI Matches Now
+                </a>
+                <!-- <a href="#features" class="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 rounded-full border-2 border-gray-200 hover:border-gray-300 font-semibold text-base sm:text-lg hover:bg-white/50 backdrop-blur-sm transition-all duration-300">
+                    <i class="fas fa-play-circle text-lg sm:text-xl mr-2 sm:mr-3"></i>
+                    AI Matching Explained
+                </a> -->
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm md:text-base">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-users text-rose-500 text-lg sm:text-xl"></i>
+                    <span>50K+ NRIs</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-chart-line text-green-500 text-lg sm:text-xl"></i>
+                    <span>Verified Profiles</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-shield-alt text-blue-500 text-lg sm:text-xl"></i>
+                    <span>Residents Permits & Passport</span>
+                </div>
+            </div>
+        </div>
+
         <div id="hearts-container" class="fixed inset-0 pointer-events-none z-40"></div>
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-r from-rose-200/20 to-purple-200/20 rounded-3xl blur-3xl -z-0"></div>
     </section>
@@ -497,184 +499,111 @@
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold serif mb-4 sm:mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                     Choose Your Plan
                 </h2>
-                <!-- <p class="text-base sm:text-xl text-green-600 max-w-2xl mx-auto"><strong>
+                <p class="text-base sm:text-xl text-green-600 max-w-2xl mx-auto"><strong>
                     <a href="https://pay.sumup.com/b2c/QBVN8O9J" target="_blank">Click Here</strong> To Start Enrolment - £9.99 one time (Non-Refundable).</a> 
-                    <br>Upgrade when you're ready to connect with verified matches.</p> -->
+                    <br>Upgrade when you're ready to connect with verified matches.</p>
                 
                     <p class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-lg font-bold px-8 py-4 rounded-2xl shadow-2xl border-2 border-emerald-200/50 text-center mx-auto max-w-md animate-pulse hover:scale-105 transition-all duration-300 my-6">
-                        🚀 Launch Promotional Price - 50% till JUNE 2026 for all new subscriptions!
+                        🚀 Launch Promotional Price - 50% till 15 April'26 for all new subscriptions!
                     </p>
 
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
                 <!-- Free Plan -->
-              
+                <div class="relative bg-white rounded-2xl sm:rounded-3xl border-2 border-gray-200 p-6 sm:p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user text-gray-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold serif">Basic</h3>
+                        <p class="text-gray-500 text-sm mt-1">Get started</p>
+                        <div class="mt-4">
+                            <span class="text-4xl sm:text-5xl font-bold">£29.99</span>
+                            <span class="text-gray-500 text-sm">/ month</span><br>
+                            <span class="text-2xl sm:text-2xl font-bold">£270.00</span>
+                            <span class="text-gray-500 text-sm">/ year</span>
+                        </div>
+                    </div>
 
-                <div class="relative bg-white rounded-2xl sm:rounded-3xl border-2 border-gray-200 p-6 sm:p-8 hover:shadow-xl transition-all duration-300 group">
-    <div class="text-center mb-6">
-        <div class="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-rose-50 transition-colors">
-            <i class="fas fa-user text-gray-500 text-xl group-hover:text-rose-500"></i>
-        </div>
-        <h3 class="text-xl sm:text-2xl font-bold serif text-gray-800">Basic</h3>
-        <p class="text-gray-500 text-sm mt-1">Get started</p>
-        
-        <div class="mt-4 flex flex-col items-center">
-            <div class="flex items-center gap-1 text-gray-400 line-through text-lg">
-                <span>£29.99</span>
-            </div>
-            
-            <div class="flex items-baseline gap-1">
-                <span class="text-4xl sm:text-5xl font-extrabold text-rose-600">£14.99</span>
-                <span class="text-gray-500 text-sm font-medium">/ month</span>
-            </div>
-
-            <span class="inline-block mt-2 bg-rose-100 text-rose-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
-                Limited Time: 50% Off
-            </span>
-        </div>
-    </div>
-
-    <ul class="space-y-4 text-sm text-gray-600 mb-8">
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-green-500 mt-0.5"></i> 
-            <span>Profile creation & <strong>Verification</strong></span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-green-500 mt-0.5"></i> 
-            <span>Advanced Search Filters</span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-green-500 mt-0.5"></i> 
-            <span>Express Interest to Matches</span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-green-500 mt-0.5"></i> 
-            <span>Upload Detailed Bio</span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-green-500 mt-0.5"></i> 
-            <span>Upload Kundali / Horoscope</span>
-        </li>
-    </ul>
-
-    <a href="#register" class="block w-full text-center py-3 sm:py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold hover:border-rose-500 hover:text-rose-600 hover:bg-rose-50 transition-all duration-300 text-sm sm:text-base">
-        Create Profile
-    </a>
-</div>
-
+                    <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Profile creation & Verification</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Search</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Interest</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Upload Bio</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Upload Kundali</li>
+                        <li class="flex items-start gap-2"></li>
+                        <li class="flex items-start gap-2"></li>
+                        <li class="flex items-start gap-4"></li>
+                        <li class="flex items-start gap-4"></li>
+                        <li class="flex items-start gap-4"></li>
+                        <li class="flex items-start gap-4"></li>
+                        <li class="flex items-start gap-4"></li>
+                        <li class="flex items-start gap-2"></li>
+                    </ul>
+                    <a href="#register" class="block w-full text-center py-3 sm:py-4 rounded-full border-2 border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition-all duration-300 text-sm sm:text-base">
+                        Create Profile
+                    </a>
+                </div>
                 <!-- Moderate Plan -->
-             
-
                 <div class="relative bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 scale-[1.02] md:scale-105">
-    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md">
-        Most Popular
-    </div>
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Most Popular</div>
+                    <div class="text-center mb-6">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-crown text-yellow-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold serif">Moderate</h3>
+                        <p class="text-white/80 text-sm mt-1">Best value</p>
+                        <div class="mt-4">
+                            <span class="text-4xl sm:text-5xl font-bold">£49.99</span>
+                            <span class="text-white/80 text-sm">/ month</span><br>
+                             <span class="text-2xl sm:text-2xl font-bold">£450.00</span>
+                            <span class="text-white/80 text-sm">/ year</span>
+                        </div>
+                    </div>
 
-    <div class="text-center mb-6">
-        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-crown text-yellow-300 text-xl"></i>
-        </div>
-        <h3 class="text-xl sm:text-2xl font-bold serif">Moderate</h3>
-        <p class="text-white/80 text-sm mt-1">Best value</p>
-        
-        <div class="mt-4 flex flex-col items-center">
-            <div class="flex items-center gap-1 text-white/60 line-through text-lg sm:text-xl">
-                <span>£49.99</span>
-            </div>
-            
-            <div class="flex items-baseline gap-1">
-                <span class="text-4xl sm:text-6xl font-extrabold text-yellow-300">£24.99</span>
-                <span class="text-white/90 text-sm font-medium">/ month</span>
-            </div>
-
-            <span class="inline-block mt-2 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
-                Save 50% Today
-            </span>
-        </div>
-    </div>
-
-    <ul class="space-y-4 text-sm mb-8">
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-yellow-300 mt-0.5"></i> 
-            <span>Everything in <strong>Basic</strong></span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-yellow-300 mt-0.5"></i> 
-            <span><strong>10 profiles</strong> shared weekly based on preferences</span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-yellow-300 mt-0.5"></i> 
-            <span>Unlimited 1-to-1 Chat (once accepted)</span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-yellow-300 mt-0.5"></i> 
-            <span>High-quality Video Calls</span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-yellow-300 mt-0.5"></i> 
-            <span>Advanced Match Discovery</span>
-        </li>
-    </ul>
-
-    <a href="#register" class="block w-full text-center py-4 rounded-full bg-white text-rose-600 font-bold hover:bg-yellow-50 hover:scale-105 transition-all duration-300 shadow-xl text-base">
-        Create Profile
-    </a>
-</div>
-
+                    <ul class="space-y-3 text-sm mb-8">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-yellow-300 mt-0.5"></i> Everything in Basic</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-yellow-300 mt-0.5"></i> <strong>Sharing 10 profiles based upon your preferences in a week</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-yellow-300 mt-0.5"></i> Once accepted can chat one to one</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-yellow-300 mt-0.5"></i> Video chat</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-yellow-300 mt-0.5"></i> Match discovery</li>
+                         <li class="flex items-start gap-2"><br></li>
+                         <li class="flex items-start gap-2"><br></li>
+                         <li class="flex items-start gap-2"><br></li>
+                         <li class="flex items-start gap-2"><br></li>
+                         <li class="flex items-start gap-2"><br></li>
+                    </ul>
+                    <a href="#register" class="block w-full text-center py-3 sm:py-4 rounded-full bg-white text-rose-500 font-bold hover:bg-gray-50 transition-all duration-300 shadow-lg text-sm sm:text-base">
+                        Create Profile
+                    </a>
+                </div>
                 <!-- Premium Plan -->
-                <div class="relative bg-white rounded-2xl sm:rounded-3xl border-2 border-amber-100 p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 group overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-yellow-500"></div>
+                <div class="relative bg-white rounded-2xl sm:rounded-3xl border-2 border-gray-200 p-6 sm:p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-r from-amber-100 to-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-gem text-amber-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold serif">Premium</h3>
+                        <p class="text-gray-500 text-sm mt-1">White-glove service</p>
+                        <div class="mt-4">
+                            <span class="text-4xl sm:text-5xl font-bold">£89.99</span>
+                            <span class="text-gray-500 text-sm">/ month</span><br>
+                            <span class="text-2xl sm:text-2xl font-bold">£810.00</span>
+                            <span class="text-gray-500 text-sm">/ year</span>
+                        </div>
+                    </div>
 
-    <div class="text-center mb-6">
-        <div class="w-14 h-14 bg-gradient-to-r from-amber-100 to-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-gem text-amber-500 text-xl"></i>
-        </div>
-        <h3 class="text-xl sm:text-2xl font-bold serif text-gray-800">Premium</h3>
-        <p class="text-gray-500 text-sm mt-1">White-glove service</p>
-        
-        <div class="mt-4 flex flex-col items-center">
-            <div class="flex items-center gap-1 text-gray-400 line-through text-lg">
-                <span>£89.99</span>
-            </div>
-            
-            <div class="flex items-baseline gap-1">
-                <span class="text-4xl sm:text-5xl font-extrabold text-amber-600">£44.99</span>
-                <span class="text-gray-500 text-sm font-medium">/ month</span>
-            </div>
-
-            <span class="inline-block mt-2 bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
-                Elite Offer: 50% Off
-            </span>
-        </div>
-    </div>
-
-    <ul class="space-y-4 text-sm text-gray-600 mb-8">
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-amber-500 mt-0.5"></i> 
-            <span>Everything in <strong>Moderate</strong></span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-amber-500 mt-0.5"></i> 
-            <span><strong>Unlimited</strong> profile sharing weekly</span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-amber-500 mt-0.5"></i> 
-            <span>Concierge Meeting Coordination (In-person or Video)</span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-amber-500 mt-0.5"></i> 
-            <span>Exclusive gift from <strong>Dream Soulmate</strong></span>
-        </li>
-        <li class="flex items-start gap-2">
-            <i class="fas fa-check text-amber-500 mt-0.5"></i> 
-            <span>Free VIP access to all events</span>
-        </li>
-    </ul>
-
-    <a href="#register" class="block w-full text-center py-4 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold hover:from-amber-600 hover:to-yellow-600 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-base">
-        Get Premium Access
-    </a>
-</div>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Everything in Moderate</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Sharing unlimited profiles based upon your preferences in a week</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Once you select someone, we arrange meeting in-person or on Video at pre decided venue.</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Special gift from Dream Soulmate.</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-0.5"></i> Participate in events free of charge</li>
+                    </ul>
+                    <a href="#register" class="block w-full text-center py-3 sm:py-4 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-bold hover:from-amber-600 hover:to-yellow-600 transition-all duration-300 shadow-lg text-sm sm:text-base">
+                        Create Profile
+                    </a>
+                </div>
             
             </div>
 
@@ -695,58 +624,6 @@
 
         </div>
     </section>
-
-
-
-    <!-- CTA / Registration Section -->
-    <section id="register" class="py-16 sm:py-24 md:py-32 px-4 bg-gradient-to-br from-rose-500 via-pink-500 to-purple-600 text-white">
-        <div class="container mx-auto max-w-5xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <!-- Left: Text -->
-                <div class="text-center lg:text-left">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold serif mb-4 sm:mb-6">Select your Payment Plan and Start Your Journey Today</h2>
-                    <p class="text-lg sm:text-xl mb-6 opacity-90 leading-relaxed">Join 50K+ verified Indians. Create your profile & get instant matches tailored for NRI life.</p>
-                    <div class="space-y-3 text-left">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-sm"></i>
-                            </div>
-                            <span class="text-sm sm:text-base">Create profile & browse</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-sm"></i>
-                            </div>
-                            <span class="text-sm sm:text-base">Parents can register on behalf of their children</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-sm"></i>
-                            </div>
-                            <span class="text-sm sm:text-base">Match with profiles From NRI & India</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-sm"></i>
-                            </div>
-                            <span class="text-sm sm:text-base">Cancel anytime, no long-term commitment</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Right: Registration Form -->
-                <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl text-gray-900">
-                    <h3 class="text-xl sm:text-2xl font-bold serif text-center mb-6">Create Profile</h3>
-                        <a href="https://forms.gle/mozwmHUNbeBf7JjUA" target="_blank">
-                            <button type="submit" class="w-full py-3 sm:py-4 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold text-base sm:text-lg shadow-lg hover:shadow-xl hover:from-rose-600 hover:to-pink-700 transition-all duration-300">
-                                <i class="fas fa-heart mr-2"></i>Register Now
-                            </button>
-                        </a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!-- Privacy & Safety Section -->
     <section id="safety" class="py-16 sm:py-24 md:py-32 px-4 bg-gradient-to-b from-gray-50 to-white">
@@ -791,6 +668,54 @@
         </div>
     </section>
 
+    <!-- CTA / Registration Section -->
+    <section id="register" class="py-16 sm:py-24 md:py-32 px-4 bg-gradient-to-br from-rose-500 via-pink-500 to-purple-600 text-white">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <!-- Left: Text -->
+                <div class="text-center lg:text-left">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold serif mb-4 sm:mb-6">Start Your Journey Today</h2>
+                    <p class="text-lg sm:text-xl mb-6 opacity-90 leading-relaxed">Join 50K+ verified Indians. Create your profile & get instant matches tailored for NRI life.</p>
+                    <div class="space-y-3 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-sm sm:text-base">Create profile & browse</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-sm sm:text-base">Parents can register on behalf of their children</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-sm sm:text-base">Match with profiles From NRI & India</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-sm sm:text-base">Cancel anytime, no long-term commitment</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Registration Form -->
+                <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl text-gray-900">
+                    <h3 class="text-xl sm:text-2xl font-bold serif text-center mb-6">Create Profile</h3>
+                        <a href="https://forms.gle/mozwmHUNbeBf7JjUA" target="_blank">
+                            <button type="submit" class="w-full py-3 sm:py-4 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold text-base sm:text-lg shadow-lg hover:shadow-xl hover:from-rose-600 hover:to-pink-700 transition-all duration-300">
+                                <i class="fas fa-heart mr-2"></i>Register Now
+                            </button>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="py-16 sm:py-24 md:py-32 px-4 bg-white">
@@ -977,3 +902,12 @@
 </body>
 </html>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2XPM7EPB2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P2XPM7EPB2');
+</script>
