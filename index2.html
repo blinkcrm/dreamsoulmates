@@ -188,110 +188,62 @@
     <!-- Spacer for fixed header -->
     <div class="h-20 md:h-20"></div>
 
+    <style>
+      .hero-bg{
+        background-image: url('./images/home-bg2.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed; /* Optional: Creates a parallax scroll effect */
+    height: 100vh; /* Ensures the container covers the full viewport height */
+    margin: 0; /* Removes default body margin */
+    padding: 0;
 
+      }
 
-<section id="hero-carousel" class="relative w-full h-[500px] sm:h-[650px] overflow-hidden bg-gray-900">
-    <div class="relative h-full">
-        
-        <div data-carousel-item class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 z-10">
-            <img src="/images/1.webp" 
-                 class="absolute block w-full h-full object-cover opacity-70" alt="AI Matchmaking">
-            <div class="absolute inset-0 bg-black/40 flex items-center">
-                <div class="container mx-auto px-6 md:px-12 text-center md:text-left">
-                    <span class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-white uppercase bg-rose-600 rounded">Smart Matching</span>
-                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 serif leading-tight">AI-Powered <br>Match Making</h2>
-                    <p class="text-white text-base md:text-xl max-w-xl mb-8 drop-shadow-lg">Our advanced algorithms analyze compatibility across 40+ parameters to find your perfect soulmate.</p>
-                    <a href="#register" class="inline-block px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-xl">Start Your Search</a>
-                </div>
-            </div>
+    </style>
+
+    <!-- Hero Section -->
+    <section  class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-20 md:py-32 pt-24 md:pt-32">
+        <!-- Main Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-rose-500/5 to-purple-500/5"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40"></div>
+        <div class="relative py-20 sm:py-32 overflow-hidden bg-cover bg-center bg-no-repeat" 
+        >
+    
+    <div class="container mx-auto text-center relative z-10 max-w-5xl px-4">
+        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold serif mb-4 sm:mb-6 bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent leading-tight">
+            Dream Soulmates <span class="block">for NRIs</span>
+        </h1>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-2">
+            <a href="#register" class="group w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-semibold text-base sm:text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:from-rose-600 hover:to-pink-700">
+                <i class="fas fa-heart text-lg sm:text-xl mr-2 sm:mr-3 group-hover:scale-110 transition-transform"></i>
+                Find NRI Matches Now
+            </a>
         </div>
 
-        <div data-carousel-item class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 z-0">
-            <img src="/images/2.webp" 
-                 class="absolute block w-full h-full object-cover opacity-70" alt="Passport & ID Verified">
-            <div class="absolute inset-0 bg-black/40 flex items-center">
-                <div class="container mx-auto px-6 md:px-12 text-center md:text-left">
-                    <span class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-white uppercase bg-blue-600 rounded">Safe & Secure</span>
-                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 serif leading-tight">Passport & ID <br>Verified Profiles</h2>
-                    <p class="text-white text-base md:text-xl max-w-xl mb-8 drop-shadow-lg">No bots. No fake profiles. Every NRI member is manually verified via Passport and Residency Permits.</p>
-                    <a href="#register" class="inline-block px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-xl">Join Verified Community</a>
-                </div>
+        <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm md:text-base font-medium text-gray-800">
+            <div class="flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
+                <i class="fas fa-users text-rose-500 text-lg sm:text-xl"></i>
+                <span>50K+ NRIs</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
+                <i class="fas fa-chart-line text-green-500 text-lg sm:text-xl"></i>
+                <span>Verified Profiles</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
+                <i class="fas fa-shield-alt text-blue-500 text-lg sm:text-xl"></i>
+                <span>Residents Permits & Passport</span>
             </div>
         </div>
-
-        <div data-carousel-item class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 z-0">
-            <img src="/images/3.webp" 
-                 class="absolute block w-full h-full object-cover opacity-70" alt="Global Coverage">
-            <div class="absolute inset-0 bg-black/40 flex items-center">
-                <div class="container mx-auto px-6 md:px-12 text-center md:text-left">
-                    <span class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-white uppercase bg-amber-500 rounded">Global Reach</span>
-                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 serif leading-tight">Global Coverage <br>America • EMEA • APAC</h2>
-                    <p class="text-white text-base md:text-xl max-w-xl mb-8 drop-shadow-lg">Connecting hearts across borders. Find your soulmate in the USA, UK, Canada, Australia, and beyond.</p>
-                    <a href="#register" class="inline-block px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-xl">Find Your Soulmate</a>
-                </div>
-            </div>
-        </div>
-
     </div>
+</div>
 
-    <button id="prevSlide" class="absolute top-1/2 left-4 z-40 -translate-y-1/2 p-3 rounded-full bg-black/20 hover:bg-black/50 text-white transition-all">
-        <i class="fas fa-chevron-left text-xl"></i>
-    </button>
-    <button id="nextSlide" class="absolute top-1/2 right-4 z-40 -translate-y-1/2 p-3 rounded-full bg-black/20 hover:bg-black/50 text-white transition-all">
-        <i class="fas fa-chevron-right text-xl"></i>
-    </button>
-</section>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('[data-carousel-item]');
-        const nextBtn = document.getElementById('nextSlide');
-        const prevBtn = document.getElementById('prevSlide');
-        let currentIndex = 0;
-        const slideInterval = 10000; // 3 seconds
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.replace('opacity-0', 'opacity-100');
-                    slide.classList.add('z-10');
-                    slide.classList.remove('z-0');
-                } else {
-                    slide.classList.replace('opacity-100', 'opacity-0');
-                    slide.classList.add('z-0');
-                    slide.classList.remove('z-10');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        // Auto-rotate
-        let autoRotate = setInterval(nextSlide, slideInterval);
-
-        // Manual controls
-        nextBtn.addEventListener('click', () => {
-            clearInterval(autoRotate);
-            nextSlide();
-            autoRotate = setInterval(nextSlide, slideInterval);
-        });
-
-        prevBtn.addEventListener('click', () => {
-            clearInterval(autoRotate);
-            prevSlide();
-            autoRotate = setInterval(nextSlide, slideInterval);
-        });
-    });
-</script>
+        
+        <div id="hearts-container" class="fixed inset-0 pointer-events-none z-40"></div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-r from-rose-200/20 to-purple-200/20 rounded-3xl blur-3xl -z-0"></div>
+    </section>
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="py-16 sm:py-24 md:py-32 px-4 bg-gradient-to-b from-white to-rose-50/30">
