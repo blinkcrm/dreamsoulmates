@@ -85,6 +85,15 @@
             100% { background-position: 1000px 0; }
         }
         
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            animation: marquee 60s linear infinite;
+        }
+        
         .heart-pop {
             position: fixed;
             pointer-events: none;
@@ -122,6 +131,16 @@
 
     <!-- Fixed Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200/50">
+        <div class="bg-rose-600 text-white text-sm py-2 overflow-hidden whitespace-nowrap">
+            <div class="animate-marquee">
+                We do not accept any cash, only payment to UK bank account. 
+                You have to pay only £5 for profile registration & profile creation 
+                <a href="https://monzo.com/pay/r/consultation-for-proposal_nXo6B6tCieQqV3" 
+                class="underline font-bold"><b>Pay here</b></a>. At the moment we only accept 
+                NRIs residents at UK and US. We do not call to any user, in case you have any questions 
+                please send it to the following email address support@dreamsoulmates.com
+            </div>
+        </div>
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <a href="/" class="flex items-center space-x-3 group">
                 <div class="w-12 h-12 bg-gradient-to-r from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -188,7 +207,7 @@
     </header>
 
     <!-- Spacer for fixed header -->
-    <div class="h-20 md:h-20"></div>
+    <div class="h-32 md:h-32"></div>
 
 
 
@@ -986,60 +1005,106 @@
                 </h2>
             </div>
             <div class="space-y-4">
-                <!-- <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
-                    <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
-                        <span>Is DreamSoulmates free to use?</span>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
-                        Yes! Creating a profile, getting verified, and browsing AI matches is completely free. To contact matches, attend events, or access advanced features like detailed Kundali reports, you can upgrade to Premium (£29/month) or VIP (£99/month). Cancel anytime.
-                    </div>
-                </details> -->
-                <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
-                    <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
-                        <span>How does verification work?</span>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
-                        We verify identity using Passport and Residents Permits documents. Our team manually checks every submission. Only verified profiles appear in search results. This ensures zero fake profiles on the platform.
-                    </div>
-                </details>
-                <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
-                    <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
-                        <span>Can parents register on behalf of their children?</span>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
-                        Absolutely! Many profiles on DreamSoulmates are created by parents, siblings, or relatives. We have a dedicated "Profile For" option during registration — choose Son, Daughter, Brother, Sister, or Relative. Parents can register for their children globally.
-                    </div>
-                </details>
-                <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
-                    <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
-                        <span>Can I match with NRIs across the globe?</span>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
-                        Absolutely! DreamSoulmates connects NRIs across America, EMEA, APAC and globally. You can set your preference for countries and regions in your profile settings to match with compatible NRIs anywhere in the world.
-                    </div>
-                </details>
-                <!-- <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
-                    <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
-                        <span>How do I report a fake or suspicious profile?</span>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
-                        Every profile has a "Report" button. You can also email our safety team at safety@dreamsoulmates.com. We investigate every report within 24 hours and take strict action — suspicious profiles are permanently removed.
-                    </div>
-                </details> -->
-                <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
-                    <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
-                        <span>Is my data safe? Are you GDPR compliant?</span>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
-                        Yes, we are fully GDPR and UK Data Protection Act 2018 compliant. Your data is encrypted with 256-bit SSL, stored securely, and never shared with third parties. You can request data deletion at any time from your account settings.
-                    </div>
-                </details>
+            
+                <div class="pt-10 border-t border-gray-200">
+                    <h3 class="text-2xl font-semibold serif mb-4">Policies Related</h3>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>Do we share information to third party?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Yes, for verification of your ID, in case you opt to be verified.
+                        </div>
+                    </details>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>Do you accept Cash?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            No, we do not accept any cash. Payment (£5) for registration and profile creation can only be made to a UK bank account. You can use this link <a href="https://monzo.com/pay/r/consultation-for-proposal_nXo6B6tCieQqV3" class="text-rose-500 hover:underline">Pay Here</a>, this is a UK based Monzo Business Account.
+                        </div>
+                    </details>
+                </div>
+                <div class="pt-10 border-t border-gray-200">
+                    <h3 class="text-2xl font-semibold serif mb-4">Profile Related</h3>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>How long my profile will be available on the website?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            We will keep the profile for 6 months only and after that we will do a soft delete, meaning no one can see your profile.
+                        </div>
+                    </details>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>Can we see the profiles from across the Globe?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Yes. If NRI from anywhere in the world has registered you should be able to search. However at the moment we can only verify UK residents and soon we are going to verify US residents.
+                        </div>
+                    </details>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>How do you verify profiles?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            All the UK profiles are verified on request if user opts for verification by authorised third party. We cannot disclose the information of third party. Please note at this moment we cannot verify any other residents other than UK.
+                        </div>
+                    </details>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>I am Indian, can I create my profile?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Yes, you can create your profile and search for your dream soulmate. The portal is for searching verified NRI soulmate.
+                        </div>
+                    </details>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>Why my profile is rejected?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Profiles are rejected with two reasons: you have not uploaded your Identity proof and/or payment is not made for the UK account.
+                        </div>
+                    </details>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>How will I get confirmation whether my profile is created?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Once you enter the details, you will get email confirmation from support@dreamsoulmates.com.
+                        </div>
+                    </details>
+                </div>
+                <div class="pt-10 border-t border-gray-200">
+                    <h3 class="text-2xl font-semibold serif mb-4">DreamSoulmates Support</h3>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>How do I need to connect to DreamSoulmates support in case of query?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Please send your question or query to support@dreamsoulmates.com and we should be able to reply back within 5 working days as per UK.
+                        </div>
+                    </details>
+                    <details class="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden mb-4">
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-900 text-sm sm:text-base hover:bg-gray-100 transition-colors">
+                            <span>Is there a customer care contact number?</span>
+                            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Not at this moment but we are working on it and will soon provide customer contact details.
+                        </div>
+                    </details>
+                </div>
             </div>
         </div>
     </section>
