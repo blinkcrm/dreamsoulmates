@@ -511,6 +511,103 @@
 
     </script>
 
+    <!-- Survey Popup -->
+    <style>
+        @keyframes surveyFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes surveySlideUp { 0% { opacity: 0; transform: translateY(40px) scale(0.95); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes surveyBtnSlide { 0% { transform: translateX(-100%); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateX(100%); opacity: 0; } }
+        #survey-popup-overlay {
+            display: none; position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+            animation: surveyFadeIn 0.3s ease;
+        }
+        #survey-popup-overlay.active { display: flex; align-items: center; justify-content: center; }
+        #survey-popup-box {
+            position: relative; width: 92%; max-width: 440px; border-radius: 24px; overflow: hidden;
+            background: linear-gradient(145deg, #fff1f2, #fdf2f8, #faf5ff);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25), 0 0 40px rgba(236,72,153,0.15);
+            animation: surveySlideUp 0.4s cubic-bezier(0.16,1,0.3,1);
+            border: 1px solid rgba(236,72,153,0.15);
+        }
+        #survey-popup-box .survey-close {
+            position: absolute; top: 12px; right: 12px; z-index: 10;
+            width: 36px; height: 36px; border-radius: 50%; border: none; cursor: pointer;
+            background: rgba(255,255,255,0.9); color: #e11d48; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.2s;
+        }
+        #survey-popup-box .survey-close:hover { background: #e11d48; color: #fff; transform: rotate(90deg); }
+        .survey-popup-inner { padding: 36px 28px 32px; text-align: center; }
+        .survey-icon { font-size: 72px; margin-bottom: 12px; color: #f43f5e; filter: drop-shadow(0 4px 12px rgba(244,63,94,0.3)); }
+        .survey-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #1f2937; margin-bottom: 8px; line-height: 1.3; }
+        .survey-title span { background: linear-gradient(135deg, #f43f5e, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .survey-desc { font-size: 14px; color: #6b7280; line-height: 1.6; margin-bottom: 24px; max-width: 340px; margin-left: auto; margin-right: auto; }
+        .survey-btn {
+            position: relative; display: inline-flex; align-items: center; gap: 10px;
+            padding: 16px 36px; border: none; border-radius: 50px; cursor: pointer;
+            font-size: 16px; font-weight: 600; color: #fff; text-decoration: none;
+            background: linear-gradient(135deg, #f43f5e, #ec4899, #a855f7);
+            background-size: 200% 200%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 24px rgba(244,63,94,0.35); overflow: hidden;
+        }
+        .survey-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: surveyBtnSlide 2.5s ease-in-out infinite;
+        }
+        .survey-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 12px 32px rgba(244,63,94,0.45); }
+        .survey-btn:active { transform: scale(0.97); }
+        .survey-btn i { font-size: 18px; }
+        .survey-badge {
+            display: inline-block; margin-top: 16px; font-size: 11px; color: #9ca3af;
+            background: rgba(244,63,94,0.08); padding: 4px 14px; border-radius: 20px;
+        }
+        @media (max-width: 480px) {
+            #survey-popup-box { width: 95%; border-radius: 20px; }
+            .survey-popup-inner { padding: 32px 20px 28px; }
+            .survey-title { font-size: 20px; }
+            .survey-desc { font-size: 13px; }
+            .survey-btn { padding: 14px 28px; font-size: 15px; }
+            .survey-icon { font-size: 56px; }
+        }
+    </style>
+
+    <div id="survey-popup-overlay">
+        <div id="survey-popup-box">
+            <button class="survey-close" onclick="closeSurveyPopup()" aria-label="Close">&times;</button>
+            <div class="survey-popup-inner">
+                <div class="survey-icon"><i class="fas fa-clipboard-list"></i></div>
+                <h2 class="survey-title">Help Us Shape Your <span>Perfect Match</span></h2>
+                <p class="survey-desc">Take our quick <strong>Future Marriage &amp; Partnership Survey</strong> and help us build better matchmaking experiences for you and the NRI community.</p>
+                <a href="https://forms.gle/CJLMpwi1bjoADQ5c8" target="_blank" rel="noopener noreferrer" class="survey-btn" onclick="closeSurveyPopup()">
+                    Take the Survey <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="survey-badge">Takes only 2 minutes</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closeSurveyPopup() {
+            document.getElementById('survey-popup-overlay').classList.remove('active');
+            sessionStorage.setItem('survey_popup_closed', '1');
+        }
+        document.getElementById('survey-popup-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeSurveyPopup();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeSurveyPopup();
+        });
+        window.addEventListener('load', function() {
+            if (!sessionStorage.getItem('survey_popup_closed')) {
+                setTimeout(function() {
+                    document.getElementById('survey-popup-overlay').classList.add('active');
+                }, 1500);
+            }
+        });
+    </script>
+
 </body>
 </html>
 
