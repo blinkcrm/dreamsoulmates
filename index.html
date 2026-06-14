@@ -87,11 +87,13 @@
         
         /* Marquee Animation */
         @keyframes marquee {
-            0% { transform: translateX(100%); }
+            0% { transform: translateX(100vw); }
             100% { transform: translateX(-100%); }
         }
         .animate-marquee {
-            animation: marquee 60s linear infinite;
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite;
         }
         
         .heart-pop {
@@ -133,9 +135,10 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200/50">
         <div class="bg-rose-600 text-white text-sm py-2 overflow-hidden whitespace-nowrap">
             <div class="animate-marquee">
-                We do not accept any cash, <a href="https://monzo.com/pay/r/consultation-for-proposal_9ILEb5vOCTt7wc" 
-                class="underline font-bold"><b>Click here</b></a> to Pay £5 for profile registration & profile creation 
-                . For any queries email us - support@dreamsoulmates.com
+               We do not accept any cash, 
+                <a href="https://monzo.com/pay/r/consultation-for-proposal_9ILEb5vOCTt7wc" class="underline font-bold"><b>Click here</b></a> 
+                 to Pay £5 for profile creation. Reach us -  
+                <a href="mailto:support@dreamsoulmates.com">support@dreamsoulmates.com</a>
             </div>
         </div>
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -148,7 +151,7 @@
                     <p class="text-xs text-gray-500 font-medium">#1 NRI Matrimony</p>
                 </div>
             </a>
-            <div class="hidden lg:flex items-center space-x-3">
+            <div class="hidden lg:flex items-center sce-x-3">
                 <a href="#about" class="text-gray-700 hover:text-rose-500 font-medium transition-colors px-2 py-2 text-sm">About us</a>
                 <a href="#why" class="text-gray-700 hover:text-rose-500 font-medium transition-colors px-2 py-2 text-sm">Why DSM</a>
                 <a href="#features" class="text-gray-700 hover:text-rose-500 font-medium transition-colors px-2 py-2 text-sm">Features</a>
@@ -1148,7 +1151,8 @@
                 <ul class="space-y-2 text-gray-400 text-sm">
                     <li><a href="tel:+447950202362" class="hover:text-rose-400 transition-colors" style="display: none;">
                         +44 7950 202362</a></li>
-                    <li><a href="mailto:support@dreamsoulmates.com" class="hover:text-rose-400 transition-colors">support@dreamsoulmates.com</a></li>
+                    <li>
+                        <a href="mailto:support@dreamsoulmates.com" class="hover:text-rose-400 transition-colors">support@dreamsoulmates.com</a></li>
                 </ul>
                 <div class="flex justify-center md:justify-start gap-4 mt-4">
                     <!-- <a href="https://wa.me/+447950202362" target="_blank" class="text-xl hover:text-rose-500 transition-colors"><i class="fab fa-whatsapp"></i></a> -->
@@ -1204,7 +1208,7 @@
             }
         });
 
-        // Animate on scroll
+        // Animate cards on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1213,10 +1217,10 @@
                 }
             });
         });
-        document.querySelectorAll('.group, [class*="shadow"]').forEach(el => {
+        document.querySelectorAll('.group').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.1s ease';
+            el.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
             observer.observe(el);
         });
 
@@ -1303,7 +1307,6 @@
     <script>
         function closeSurveyPopup() {
             document.getElementById('survey-popup-overlay').classList.remove('active');
-            sessionStorage.setItem('survey_popup_closed', '1');
         }
         document.getElementById('survey-popup-overlay').addEventListener('click', function(e) {
             if (e.target === this) closeSurveyPopup();
@@ -1312,11 +1315,9 @@
             if (e.key === 'Escape') closeSurveyPopup();
         });
         window.addEventListener('load', function() {
-            if (!sessionStorage.getItem('survey_popup_closed')) {
-                setTimeout(function() {
-                    document.getElementById('survey-popup-overlay').classList.add('active');
-                }, 1500);
-            }
+            setTimeout(function() {
+                document.getElementById('survey-popup-overlay').classList.add('active');
+            }, 500);
         });
     </script>
 
